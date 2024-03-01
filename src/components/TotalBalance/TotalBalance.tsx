@@ -1,9 +1,15 @@
+import { useSelector } from "react-redux";
+import { selectChartData } from "../../features/chartData/chartDataSlice";
+
 const TotalBalance = () => {
+  const data = useSelector(selectChartData);
+  const yValues = data.map((coord: any) => coord.y);
+  const total = yValues.reduce((el, ac) => el + ac, 0);
   return (
     <div className="bg-[#ec755c] flex justify-between text-white p-4 rounded-lg">
       <div className="">
         <p className="text-xs">Balanç total</p>
-        <p className="font-semibold">3323 €</p>
+        <p className="font-semibold">{total} €</p>
       </div>
       <div className="flex gap-2 my-auto">
         <img

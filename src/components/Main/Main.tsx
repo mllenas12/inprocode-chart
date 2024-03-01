@@ -1,8 +1,11 @@
+import { BarChart } from "./BarChart";
 const Main = () => {
   return (
     <div className="bg-white rounded-lg p-4 flex flex-col gap-2">
       <h1 className="text-lg font-bold px-2">Despeses - Última setmana</h1>
-      <div className="h-32">Gràfic</div>
+      <div className="py-2">
+        <BarChart />
+      </div>
       <hr className="border rounded" />
       <div className="flex justify-between my-4">
         <div>
