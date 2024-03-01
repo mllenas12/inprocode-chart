@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import chartDataReducer from "../features/chartData/chartDataSlice";
+import currentExpensesReducer from "../features/currentExpenses/currentExpensesSlice";
 
 export const store = configureStore({
   reducer: {
     chartData: chartDataReducer,
+    currentExpenses: currentExpensesReducer,
   },
 });
 

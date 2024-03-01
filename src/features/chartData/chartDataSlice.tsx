@@ -1,10 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
-import chart from "../../data/chart.json";
+import chartCoord from "../../data/chartCoord.json";
 import { RootState } from "../../app/store";
 
 export const chartDataSlice = createSlice({
   name: "chartData",
-  initialState: chart,
+  initialState: chartCoord,
   reducers: {},
 });
 export const {} = chartDataSlice.actions;

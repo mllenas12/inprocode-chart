@@ -22,4 +22,16 @@ describe("Main Component", () => {
     const chart = screen.getByTestId("bar-chart");
     expect(chart).toBeInTheDocument();
   });
+  test("should display the expenses of the current day, and shoud always be positive and not undefined", () => {
+    const currentExpensesElement = screen.getByText(/[\d]+ €/);
+    const currentExpensesText = currentExpensesElement.textContent;
+    const value = Number(currentExpensesText.replace(" €", ""));
+    expect(value).toBeDefined();
+    expect(value).toBeGreaterThanOrEqual(0);
+  });
+
+  test("should display the difference of the amount of money between the current day and the day before", () => {
+    const difference = screen.getByText(/[\d]+%/);
+    expect(difference).toBeInTheDocument();
+  });
 });
