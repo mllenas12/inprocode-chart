@@ -1,0 +1,15 @@
+{
+    "languages": {
+        "xAxis": ["dl", "dt", "dc", "dj", "dv", "ds", "dg"]
+    },
+    "totalBalance": {
+        "title": "Balanç total" 
+    },
+    "main": {
+        "title": "Despeses - Última setmana",
+        "currentExpenses": "Despeses avui",
+        "yesterday": "respecte ahir"
+    }
+
+
+}

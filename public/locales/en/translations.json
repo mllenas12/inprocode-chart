@@ -1,0 +1,13 @@
+{
+    "languages": {
+        "xAxis": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"]
+    },
+    "totalBalance": {
+        "title": "Total Balance" 
+    },
+    "main": {
+        "title": "Expenses - Last week",
+        "currentExpenses": "Today expenses" ,
+        "yesterday": "compared to yesterday"
+    }
+}

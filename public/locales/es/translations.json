@@ -1,0 +1,13 @@
+{
+    "languages": {
+        "xAxis":["lun", "mar", "mie", "jue", "vie", "sab", "dom"]
+    },
+    "totalBalance": {
+        "title": "Balance total" 
+    },
+    "main": {
+        "title": "Gastos - Última semana" ,
+        "currentExpenses": "Gastos hoy",
+        "yesterday": "comparado con ayer"
+    }
+}

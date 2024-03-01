@@ -14,7 +14,7 @@ describe("Main Component", () => {
   });
 
   test("should render the title", () => {
-    const totalBalanceTitle = screen.getByText("Despeses - Última setmana");
+    const totalBalanceTitle = screen.getByText("main.title");
     expect(totalBalanceTitle).toBeInTheDocument();
   });
 
