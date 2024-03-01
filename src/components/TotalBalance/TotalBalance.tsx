@@ -1,9 +1,10 @@
-import { useSelector } from "react-redux";
 import { selectChartData } from "../../features/chartData/chartDataSlice";
+import { useAppSelector } from "../../hooks/storeHooks";
+import { ICoord } from "../../types/types";
 
 const TotalBalance = () => {
-  const data = useSelector(selectChartData);
-  const yValues = data.map((coord: any) => coord.y);
+  const data = useAppSelector(selectChartData);
+  const yValues = data.map((coord: ICoord) => coord.y);
   const total = yValues.reduce((el, ac) => el + ac, 0);
   return (
     <div className="bg-[#ec755c] flex justify-between text-white p-4 rounded-lg">
