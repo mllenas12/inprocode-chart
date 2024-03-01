@@ -6,19 +6,32 @@ import { useTranslation } from "react-i18next";
 const Main = () => {
   const currentExpenses = useAppSelector(selectCurrentExpenses);
   const dataChart = useAppSelector(selectChartData);
+  const currentWeekData = dataChart.chartCoord[dataChart.currentIndex];
+
   const { t } = useTranslation("translations");
 
   const calculateDif = (): string => {
     const todayExpense: number = currentExpenses.amount;
     const todayIndex: number = currentExpenses.day;
-    const yesterdayIndex: number = todayIndex - 1;
-    const yesterdayExpense: number =
-      yesterdayIndex >= 0 ? dataChart[yesterdayIndex].y : todayExpense;
+    let yesterdayIndex;
+    let yesterdayExpense;
+    if (todayIndex == 0 && dataChart.currentIndex == 0) {
+      yesterdayIndex = 0;
+      yesterdayExpense = todayExpense;
+    } else if (todayIndex == 0 && dataChart.currentIndex != 0) {
+      yesterdayIndex = 6;
+      yesterdayExpense =
+        dataChart.chartCoord[dataChart.currentIndex - 1][yesterdayIndex].y;
+    } else {
+      yesterdayIndex = todayIndex - 1;
+      yesterdayExpense = currentWeekData[yesterdayIndex].y;
+    }
     const difference: number =
       ((todayExpense - yesterdayExpense) / yesterdayExpense) * 100;
     const sign: string = todayExpense >= yesterdayExpense ? "+" : "";
     return `${sign} ${difference.toFixed(2)}%`;
   };
+
   return (
     <div className="bg-white rounded-lg p-4 flex flex-col gap-2 text-black">
       <h1 className="text-lg font-bold px-2">{t("main.title")}</h1>
@@ -34,7 +47,9 @@ const Main = () => {
           <h2 className="text-2xl font-bold">{currentExpenses.amount} €</h2>
         </div>
         <div className="flex flex-col items-end my-2">
-          <p className="text-xs font-bold">{calculateDif()}</p>
+          <p className="text-xs font-bold">
+            {currentExpenses.amount == 0 ? "0%" : calculateDif()}
+          </p>
           <p className="text-xs font-semibold">{t("main.yesterday")}</p>
         </div>
       </div>

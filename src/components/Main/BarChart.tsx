@@ -15,17 +15,11 @@ import {
 ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip, Legend);
 
 export const BarChart = () => {
-  const chartData = useAppSelector(selectChartData);
+  const dataChart = useAppSelector(selectChartData);
+  const currentWeekData = dataChart.chartCoord[dataChart.currentIndex];
+
   const dispatch = useAppDispatch();
-  const [barColors, setBarColors] = useState<string[]>([
-    "#EC765C",
-    "#EC765C",
-    "#EC765C",
-    "#EC765C",
-    "#EC765C",
-    "#EC765C",
-    "#74B6BD",
-  ]);
+  const [barColors, setBarColors] = useState<string[]>(["#EC765C"]);
   const options = {
     plugins: {
       legend: {
@@ -59,11 +53,11 @@ export const BarChart = () => {
   };
 
   const data = {
-    labels: chartData.map((data) => data.x),
+    labels: currentWeekData.map((data) => data.x),
     datasets: [
       {
         label: "amount",
-        data: chartData.map((data) => data.y),
+        data: currentWeekData.map((data) => data.y),
         borderRadius: 3,
         backgroundColor: barColors,
         hoverBackgroundColor: "#74B6BD",
