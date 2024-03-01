@@ -1,0 +1,5 @@
+[
+    { "lang": "en", "flagImg": "/images/en-flag.png" },
+    { "lang": "es", "flagImg": "/images/es-flag.png" },
+    { "lang": "cat", "flagImg": "/images/cat-flag.png" }
+  ]
