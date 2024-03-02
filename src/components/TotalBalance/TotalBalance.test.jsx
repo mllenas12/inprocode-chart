@@ -23,7 +23,7 @@ describe("TotalBalance", () => {
     expect(total).toBeInTheDocument();
   });
 
-  test("should calculate correctyle the total balance", () => {
+  test("should calculate correctyle the total balance of the first week", () => {
     const expectedTotal = 3323;
     const totalAmount = screen.getByText(`${expectedTotal} €`);
     expect(totalAmount).toBeInTheDocument();

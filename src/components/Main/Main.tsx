@@ -13,10 +13,9 @@ const Main = () => {
   const calculateDif = (): string => {
     const todayExpense: number = currentExpenses.amount;
     const todayIndex: number = currentExpenses.day;
-    let yesterdayIndex;
-    let yesterdayExpense;
+    let yesterdayIndex = 0;
+    let yesterdayExpense = 0;
     if (todayIndex == 0 && dataChart.currentIndex == 0) {
-      yesterdayIndex = 0;
       yesterdayExpense = todayExpense;
     } else if (todayIndex == 0 && dataChart.currentIndex != 0) {
       yesterdayIndex = 6;

@@ -16,21 +16,19 @@ const Multilanguage = () => {
 
   const flags = languages.map((language: ILang) => {
     return (
-      <button key={language.lang}>
+      <button
+        key={language.lang}
+        onClick={() => handleChangeLanguage(language)}
+      >
         <img
-          className="rounded-full w-6 h-6"
+          className="rounded-full w-6 h-6 "
           src={language.flagImg}
           alt={`Flag to choose language: ${language.lang}`}
-          onClick={() => handleChangeLanguage(language)}
         ></img>
       </button>
     );
   });
-  return (
-    <>
-      <div className="flex gap-2 justify-end mt-8">{flags}</div>
-    </>
-  );
+  return <div className="flex gap-2 justify-end mt-8">{flags}</div>;
 };
 
 export default Multilanguage;

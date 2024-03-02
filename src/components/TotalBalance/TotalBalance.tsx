@@ -1,14 +1,13 @@
-import { selectChartData } from "../../features/chartData/chartDataSlice";
-import { useAppSelector } from "../../hooks/storeHooks";
+import { useAppSelector, useAppDispatch } from "../../hooks/storeHooks";
 import { ICoord } from "../../types/types";
 import { useTranslation } from "react-i18next";
-import { useAppDispatch } from "../../hooks/storeHooks";
 import { resetCurrentExpenses } from "../../features/currentExpenses/currentExpensesSlice";
 import {
   nextWeek,
   previousWeek,
   changeHasNextWeek,
   changeHasPreviousWeek,
+  selectChartData,
 } from "../../features/chartData/chartDataSlice";
 
 const TotalBalance = () => {

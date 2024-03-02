@@ -1,5 +1,5 @@
 import { Provider } from "react-redux";
-import { render, screen } from "../../utils/test-utils";
+import { render } from "../../utils/test-utils";
 import { store } from "../../app/store";
 import { expect } from "vitest";
 import MultiLanguage from "./Multilanguage";
