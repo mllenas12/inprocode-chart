@@ -7,6 +7,8 @@ Additionally, you have the option to switch the language to Catalan, Spanish or 
 
 This app uses varios dependencies such as Chart.js for displaying charts, i18n for implementing multilingual support, and SonarCloud for improving code quality.
 
+Try it out for yourself [here](https://inprocode-chart.vercel.app/)!
+
 ## Here you can see a demo of what you can find:
 
 ![visual](./public/visuals-s8.gif)
